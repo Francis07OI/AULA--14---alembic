@@ -1,5 +1,5 @@
 # models é o arquivo que fica as classes
-from sqlalchemy import create_engine, Column, Integer, String, ForeingKey
+from sqlalchemy import create_engine, Column, Integer, String, foreingKey
 from sqlalchemy.orm import declarative_base, sessionmaker, relationship
 
 Base = declarative_base()
@@ -35,7 +35,7 @@ class  Aluno(Base):
     nome = Column(String(100), nullable=False)
     email = Column(String(100), unique=True)
 
-    cursos_id = Column(Integer, ForeingKey("cursos.id"))
+    cursos_id = Column(Integer, foreingKey("cursos.id"))
 
     curso = relationship("Curso", back_populates = "alunos")
 
